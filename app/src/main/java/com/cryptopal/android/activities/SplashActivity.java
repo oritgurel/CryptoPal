@@ -11,6 +11,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.cryptopal.android.R;
+import com.cryptopal.android.networking.NetworkAPI;
+import com.cryptopal.android.networking.requests.ReqUserCreate;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
@@ -47,6 +49,9 @@ public class SplashActivity extends AppCompatActivity {
                 FirebaseAuth auth = FirebaseAuth.getInstance();
                 if (auth.getCurrentUser() != null) {
                     // already signed in
+
+                    auth.getCurrentUser().getIdToken( true);
+
                     intentNext = new Intent( SplashActivity.this, ChatActivity.class);
                     startActivity(intentNext);
                     SplashActivity.this.finish();
