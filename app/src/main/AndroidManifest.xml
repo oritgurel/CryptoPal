@@ -28,6 +28,8 @@
             android:name="com.cryptopal.android.activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
+
+
         <service
             android:name=".MyFirebaseMessagingService">
             <intent-filter>
