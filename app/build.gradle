@@ -6,10 +6,11 @@ android {
 
     defaultConfig {
         applicationId "com.cryptopal.android"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        resConfigs "auto"
     }
     buildTypes {
         release {
@@ -39,6 +40,8 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     implementation 'org.apache.commons:commons-lang3:3.7'
     implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
+
 
 
 }
