@@ -10,9 +10,9 @@ import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.cryptopal.android.Firebase.FirebaseDatabaseHelper;
-import com.cryptopal.android.Firebase.FirebaseUserEntity;
-import com.cryptopal.android.Helper.Helper;
+import com.cryptopal.android.firebase.FirebaseDatabaseHelper;
+import com.cryptopal.android.firebase.FirebaseUserEntity;
+import com.cryptopal.android.helper.Helper;
 
 public class EditProfileActivity extends AppCompatActivity {
 

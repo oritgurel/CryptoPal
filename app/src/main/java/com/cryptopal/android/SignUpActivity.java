@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.cryptopal.android.Helper.Helper;
+import com.cryptopal.android.helper.Helper;
 
 public class SignUpActivity extends AppCompatActivity {
 

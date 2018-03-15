@@ -1,4 +1,4 @@
-package com.cryptopal.android.Firebase;
+package com.cryptopal.android.firebase;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,8 +9,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.cryptopal.android.Adapters.RecyclerViewAdapter;
-import com.cryptopal.android.Helper.Helper;
+import com.cryptopal.android.adapters.RecyclerViewAdapter;
+import com.cryptopal.android.helper.Helper;
 import com.cryptopal.android.UserProfile;
 
 import java.util.ArrayList;

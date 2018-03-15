@@ -1,4 +1,4 @@
-package com.cryptopal.android.Firebase;
+package com.cryptopal.android.firebase;
 
 
 public class FirebaseUserEntity {

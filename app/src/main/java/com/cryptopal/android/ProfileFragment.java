@@ -1,7 +1,6 @@
 package com.cryptopal.android;
 
 import android.Manifest;
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -28,10 +27,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cryptopal.android.Firebase.FirebaseDatabaseHelper;
-import com.cryptopal.android.Firebase.FirebaseStorageHelper;
-import com.cryptopal.android.Helper.Helper;
-import com.cryptopal.android.Helper.SimpleDividerItemDecoration;
+import com.cryptopal.android.firebase.FirebaseDatabaseHelper;
+import com.cryptopal.android.firebase.FirebaseStorageHelper;
+import com.cryptopal.android.helper.Helper;
+import com.cryptopal.android.helper.SimpleDividerItemDecoration;
 
 public class ProfileFragment extends Fragment {
 

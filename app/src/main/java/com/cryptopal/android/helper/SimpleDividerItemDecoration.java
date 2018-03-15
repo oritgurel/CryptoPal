@@ -1,4 +1,4 @@
-package com.cryptopal.android.Helper;
+package com.cryptopal.android.helper;
 
 import android.content.Context;
 import android.graphics.Canvas;

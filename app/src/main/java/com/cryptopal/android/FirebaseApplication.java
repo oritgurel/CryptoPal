@@ -13,7 +13,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.cryptopal.android.Helper.Helper;
+import com.cryptopal.android.helper.Helper;
 
 public class FirebaseApplication extends Application {
 

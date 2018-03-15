@@ -1,4 +1,4 @@
-package com.cryptopal.android.Adapters;
+package com.cryptopal.android.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
