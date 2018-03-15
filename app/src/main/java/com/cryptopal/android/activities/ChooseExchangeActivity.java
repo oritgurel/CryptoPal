@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.cryptopal.android.R;
+
 import java.lang.reflect.Array;
 
 /**
@@ -20,8 +22,7 @@ public class ChooseExchangeActivity extends AppCompatActivity {
             "for",
             "five",
             "six",
-            "seven",
-
+            "seven"
     };
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class ChooseExchangeActivity extends AppCompatActivity {
 
         ListView exchange = (ListView) findViewById(R.id.exchange);
 
-        ArrayAdapter adapter = new ArrayAdapter()
+//        ArrayAdapter adapter = new ArrayAdapter();
     }
 
 

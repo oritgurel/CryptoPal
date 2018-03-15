@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     implementation 'org.apache.commons:commons-lang3:3.7'
+    implementation 'org.greenrobot:eventbus:3.1.1'
 
 
 }

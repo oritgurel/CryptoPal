@@ -18,7 +18,7 @@ import com.cryptopal.android.helper.Helper;
 
 public class FirebaseApplication extends Application {
 
-    private static final String TAG = FirebaseApplication.class.getSimpleName();
+    private static final String TAG = "FirebaseApplication";
 
     public FirebaseAuth firebaseAuth;
 
