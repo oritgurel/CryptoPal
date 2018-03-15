@@ -10,7 +10,7 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_menu_list_exchanges">List of Exchanges</string>
 
     <string name="profile_name">Induce Smile</string>
     <string name="country_location">Sweden</string>
@@ -35,5 +35,6 @@
     <string name="edit_profile_hobby">Hobby</string>
     <string name="select_date">Date</string>
     <string name="save_edit">Save edit</string>
+    <string name="title_activity_chat">ChatActivity</string>
 
 </resources>

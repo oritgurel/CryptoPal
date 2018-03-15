@@ -5,6 +5,6 @@
         android:id="@+id/action_edit_profile"
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_edit"
-        android:title="@string/action_settings"
+        android:title="@string/title_menu_list_exchanges"
         app:showAsAction="ifRoom" />
 </menu>
