@@ -53,13 +53,6 @@ public class LoginActivity extends AppCompatActivity {
         passwordInput = (EditText)findViewById(R.id.password);
 
         signUpText = (TextView)findViewById(R.id.register);
-        signUpText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent signUpIntent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(signUpIntent);
-            }
-        });
 
         final Button loginButton = (Button)findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
