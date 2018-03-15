@@ -1,4 +1,4 @@
-package com.cryptopal.android;
+package com.cryptopal.android.helper;
 
 /**
  * Created by danielszasz on 15/03/2018.

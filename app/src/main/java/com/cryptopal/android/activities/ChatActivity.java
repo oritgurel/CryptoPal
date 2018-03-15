@@ -1,4 +1,4 @@
-package com.cryptopal.android;
+package com.cryptopal.android.activities;
 
 import android.support.v7.app.AppCompatActivity;
 
@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
  * Created by user2 on 15/03/2018.
  */
 
-public class ChooseExchangeActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
+
 
 
 }
