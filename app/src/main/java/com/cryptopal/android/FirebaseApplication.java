@@ -19,6 +19,7 @@ import com.cryptopal.android.helper.Helper;
 public class FirebaseApplication extends Application {
 
     private static final String TAG = "FirebaseApplication";
+    public static Context APP_INSTANCE;
 
     public FirebaseAuth firebaseAuth;
 
@@ -26,6 +27,13 @@ public class FirebaseApplication extends Application {
 
     public FirebaseAuth getFirebaseAuth(){
         return firebaseAuth = FirebaseAuth.getInstance();
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        APP_INSTANCE = this;
     }
 
     public String getFirebaseUserAuthenticateId() {
