@@ -1,8 +1,13 @@
 package com.cryptopal.android.networking;
 
+import com.cryptopal.android.networking.requests.ReqExchangeAdd;
+import com.cryptopal.android.networking.requests.ReqSendMessage;
+import com.cryptopal.android.networking.requests.ReqUpdateFCMToken;
 import com.cryptopal.android.networking.requests.ReqUserCreate;
 import com.cryptopal.android.networking.responses.RespExchangeAdd;
 import com.cryptopal.android.networking.responses.RespExchanges;
+import com.cryptopal.android.networking.responses.RespSendMessage;
+import com.cryptopal.android.networking.responses.RespUpdateFCMToken;
 import com.cryptopal.android.networking.responses.RespUserCreate;
 
 import retrofit2.Call;
@@ -26,7 +31,17 @@ public interface INetworkAPI {
     Call<RespExchanges> getExchanges(@Header("Authorization") String authorization);
 
     @POST("/exchanges/add")
-    Call<RespExchangeAdd> addExchange(@Header("Authorization") String authorization, String userId, String password, String exchangeId);
+    @Headers("Content-Type:application/json")
+    Call<RespExchangeAdd> addExchange(@Header("Authorization") String authorization, @Body ReqExchangeAdd aReqExchangeAdd);
+
+
+    @POST("/user/updateFCMToken")
+    @Headers("Content-Type:application/json")
+    Call<RespUpdateFCMToken> updateFCMToken(@Body ReqUpdateFCMToken aReqUpdateFCMToken);
+
+    @POST("/ask")
+    @Headers("Content-Type:application/json")
+    Call<RespSendMessage> sendMessage(@Header("Authorization") String authorization, @Body ReqSendMessage aReqSendMessage);
 
 }
 
