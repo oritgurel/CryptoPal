@@ -23,11 +23,6 @@
 
         <activity android:name="com.cryptopal.android.LoginActivity" />
 
-        <activity
-            android:name="com.cryptopal.android.ProfileActivity"
-            android:label="@string/title_activity_profile"
-            android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name="com.cryptopal.android.EditProfileActivity" />
 
         <service
