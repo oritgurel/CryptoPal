@@ -1,6 +1,7 @@
 package com.cryptopal.android.networking;
 
 import com.cryptopal.android.networking.requests.ReqUserCreate;
+import com.cryptopal.android.networking.responses.RespExchangeAdd;
 import com.cryptopal.android.networking.responses.RespExchanges;
 import com.cryptopal.android.networking.responses.RespUserCreate;
 
@@ -23,6 +24,9 @@ public interface INetworkAPI {
 
     @GET("/exchanges")
     Call<RespExchanges> getExchanges(@Header("Authorization") String authorization);
+
+    @POST("/exchanges/add")
+    Call<RespExchangeAdd> addExchange(@Header("Authorization") String authorization, String userId, String password, String exchangeId);
 
 }
 
