@@ -22,8 +22,7 @@ public class ChooseExchangeActivity extends AppCompatActivity {
             "for",
             "five",
             "six",
-            "seven",
-
+            "seven"
     };
 
     protected void onCreate(Bundle savedInstanceState) {
