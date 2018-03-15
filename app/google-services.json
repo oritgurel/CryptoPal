@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "367113934728-ft46sk3i3ic05l8ivhri4a7b3etlgb98.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cryptopal.android",
+            "certificate_hash": "bc64f5c5dc110c38ab8d97fe34fa832abb6bd6d3"
+          }
+        },
+        {
           "client_id": "367113934728-6e8eu6vagv8s4bslad6je0pphidn28dh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
