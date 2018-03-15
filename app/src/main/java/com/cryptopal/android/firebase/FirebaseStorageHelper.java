@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -49,7 +48,7 @@ public class FirebaseStorageHelper {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                Glide.with(context).load(downloadUrl.getPath()).into(imageView);
+//                Glide.with(context).load(downloadUrl.getPath()).into(imageView);
             }
         });
 

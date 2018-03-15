@@ -1,9 +1,9 @@
 package com.cryptopal.android.firebase;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
+import com.cryptopal.android.helper.UserProfile;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,16 +39,16 @@ public class FirebaseDatabaseHelper {
                 System.out.println("User login 1 " + dataSnapshot.getKey() + " " + dataSnapshot.getValue());
                 List<UserProfile> userData = adapterSourceData(dataSnapshot, uid);
                 System.out.println("User login Size " + userData.size());
-                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter((Activity)context, userData);
-                recyclerView.setAdapter(recyclerViewAdapter);
+//                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter((Activity)context, userData);
+//                recyclerView.setAdapter(recyclerViewAdapter);
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 List<UserProfile> userData = adapterSourceData(dataSnapshot, uid);
                 System.out.println("User login Size " + userData.size());
-                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter((Activity)context, userData);
-                recyclerView.setAdapter(recyclerViewAdapter);
+//                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter((Activity)context, userData);
+//                recyclerView.setAdapter(recyclerViewAdapter);
             }
 
             @Override

@@ -1,4 +1,4 @@
-package com.cryptopal.android;
+package com.cryptopal.android.activities;
 
 import android.support.v7.app.AppCompatActivity;
 

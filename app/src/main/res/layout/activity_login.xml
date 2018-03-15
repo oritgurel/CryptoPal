@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/_16sdp"
-    tools:context="com.cryptopal.android.LoginActivity">
+    tools:context="com.cryptopal.android.activities.LoginActivity">
 
     <ImageView
         android:id="@+id/logo"

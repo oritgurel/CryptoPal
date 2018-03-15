@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.cryptopal.android.activities.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -37,8 +38,8 @@ public class FirebaseApplication extends Application {
 
     public void checkUserLogin(final Context context){
         if(firebaseAuth.getCurrentUser() != null){
-            Intent profileIntent = new Intent(context, ProfileActivity.class);
-            context.startActivity(profileIntent);
+//            Intent profileIntent = new Intent(context, ProfileActivity.class);
+//            context.startActivity(profileIntent);
         }
     }
 
@@ -48,8 +49,8 @@ public class FirebaseApplication extends Application {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(null != user){
-                    Intent profileIntent = new Intent(context, ProfileActivity.class);
-                    context.startActivity(profileIntent);
+//                    Intent profileIntent = new Intent(context, ProfileActivity.class);
+//                    context.startActivity(profileIntent);
                 }else{
                     Intent loginIntent = new Intent(context, LoginActivity.class);
                     context.startActivity(loginIntent);
@@ -81,8 +82,8 @@ public class FirebaseApplication extends Application {
                             errorMessage.setText("Failed to login");
                         }else {
                             Helper.displayMessageToast(context, "User has been login");
-                            Intent profileIntent = new Intent(context, ProfileActivity.class);
-                            context.startActivity(profileIntent);
+//                            Intent profileIntent = new Intent(context, ProfileActivity.class);
+//                            context.startActivity(profileIntent);
                         }
                     }
                 });
