@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "367113934728-m0uq3hk16mbmkaajovbs895n1s8n01fr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cryptopal.android",
+            "certificate_hash": "ab4fce62146c3a91da0edf89627c002e5b68db41"
+          }
+        },
+        {
           "client_id": "367113934728-8k9lii19bevko5vbu4nhso564kql24n1.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367113934728-8k9lii19bevko5vbu4nhso564kql24n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
