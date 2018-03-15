@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "367113934728",
+    "firebase_url": "https://cryptopal-247c6.firebaseio.com",
+    "project_id": "cryptopal-247c6",
+    "storage_bucket": "cryptopal-247c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367113934728:android:02b3304fc2ea449b",
+        "android_client_info": {
+          "package_name": "com.cryptopal.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367113934728-8k9lii19bevko5vbu4nhso564kql24n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh56vaFbHiUlMHxqtAIqVljNc5TsQiII4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
