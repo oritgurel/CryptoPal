@@ -11,7 +11,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.cryptopal.android.adapters.RecyclerViewAdapter;
 import com.cryptopal.android.helper.Helper;
-import com.cryptopal.android.UserProfile;
 
 import java.util.ArrayList;
 import java.util.HashMap;

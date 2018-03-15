@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cryptopal.android.R;
-import com.cryptopal.android.UserProfile;
 
 import java.util.List;
 
