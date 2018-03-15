@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.cryptopal.android.FirebaseApplication;
+import com.cryptopal.android.CryptoPalApplication;
 import com.cryptopal.android.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.cryptopal.android.helper.Helper;
@@ -45,8 +45,8 @@ public class LoginActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
-        ((FirebaseApplication)getApplication()).checkUserLogin(LoginActivity.this);
+        mAuth = ((CryptoPalApplication)getApplication()).getFirebaseAuth();
+        ((CryptoPalApplication)getApplication()).checkUserLogin(LoginActivity.this);
 
         loginError = (TextView)findViewById(R.id.login_error);
 
@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                ((FirebaseApplication)getApplication()).loginAUser(LoginActivity.this, enteredEmail, enteredPassword, loginError);
+                ((CryptoPalApplication)getApplication()).loginAUser(LoginActivity.this, enteredEmail, enteredPassword, loginError);
             }
         });
     }
@@ -79,14 +79,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        //mAuth.addAuthStateListener(((FirebaseApplication)getApplication()).mAuthListener);
+        //mAuth.addAuthStateListener(((CryptoPalApplication)getApplication()).mAuthListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (((FirebaseApplication)getApplication()).mAuthListener != null) {
-            //mAuth.removeAuthStateListener(((FirebaseApplication)getApplication()).mAuthListener);
+        if (((CryptoPalApplication)getApplication()).mAuthListener != null) {
+            //mAuth.removeAuthStateListener(((CryptoPalApplication)getApplication()).mAuthListener);
         }
     }
 }

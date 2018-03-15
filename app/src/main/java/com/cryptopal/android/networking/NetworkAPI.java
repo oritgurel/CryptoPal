@@ -2,7 +2,7 @@ package com.cryptopal.android.networking;
 
 import android.widget.Toast;
 
-import com.cryptopal.android.FirebaseApplication;
+import com.cryptopal.android.CryptoPalApplication;
 import com.cryptopal.android.eventbus.CreateUserEvent;
 import com.cryptopal.android.eventbus.GetExchangesEvent;
 import com.cryptopal.android.networking.requests.ReqUserCreate;
@@ -78,13 +78,13 @@ public class NetworkAPI{
                                 response.body().getData())
                         );
                     } else {
-                        Toast.makeText(FirebaseApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     }
             }
 
             @Override
             public void onFailure(Call<RespUserCreate> call, Throwable t) {
-                Toast.makeText(FirebaseApplication.APP_INSTANCE, "Network Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Network Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -99,13 +99,13 @@ public class NetworkAPI{
                             response.body().getData()
                     ));
                 } else {
-                    Toast.makeText(FirebaseApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<RespExchanges> call, Throwable t) {
-                Toast.makeText(FirebaseApplication.APP_INSTANCE, "Network Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Network Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
