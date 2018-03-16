@@ -27,7 +27,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".activities.ChooseExchangeActivity"/>
-
+        <activity android:name=".UserAndPassForExchange"/>
         <service
             android:name=".MyFirebaseMessagingService">
             <intent-filter>

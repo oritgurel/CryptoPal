@@ -36,7 +36,7 @@ public class ChooseExchangeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_exchange);
         List<Exchange> exchangeList = new ArrayList<>();
-        exchangeList.add(new Exchange("BITTREX",false));
+        exchangeList.add(new Exchange("BITTREX",true));
 
         exchangeList.add(new Exchange("KRAKEN",false));
         exchangeList.add(new Exchange("COINBASE",false));
@@ -48,19 +48,13 @@ public class ChooseExchangeActivity extends AppCompatActivity {
 
 
         arrLstExchanges = new ArrLstExchanges();
-        mAdapter = new ExchangeAdapter(exchangeList);
+        mAdapter = new ExchangeAdapter( this, exchangeList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-//        listViewExchange.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View view, int postion, long Id) {
-//                Toast.makeText( ChooseExchangeActivity.this, "selected : " + exchange[postion], Toast.LENGTH_SHORT).show();
-//
-//            }
-//
-//        });
+
     }
 
 

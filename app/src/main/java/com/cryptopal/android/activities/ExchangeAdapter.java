@@ -1,13 +1,17 @@
 package com.cryptopal.android.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cryptopal.android.R;
+import com.cryptopal.android.UserAndPassForExchange;
 import com.cryptopal.android.enteteis.Exchange;
 
 import java.util.List;
@@ -17,11 +21,14 @@ import java.util.List;
  */
 
 public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.MyViewHolder> {
-    public ExchangeAdapter(List<Exchange> exchangeList) {
+    private List<Exchange> exchangeList;
+    private Context mContext;
+
+    public ExchangeAdapter(Context aContext, List<Exchange> exchangeList) {
         this.exchangeList = exchangeList;
+        mContext = aContext;
     }
 
-    private List<Exchange> exchangeList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -48,16 +55,32 @@ public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.MyView
         Exchange exchange = exchangeList.get(position);
         holder.title.setText(exchange.getName());
         if (exchange.isConfirmed()) {
+
             holder.isConfirmed.setVisibility(View.VISIBLE);
         }else{
             holder.isConfirmed.setVisibility(View.INVISIBLE);
         }
+        holder.title.setOnClickListener(onClickExchange);
+
+
 
     }
+
+    private View.OnClickListener onClickExchange = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //Toast.makeText( view.getContext(), ((TextView)view).getText(), Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(mContext, UserAndPassForExchange.class);
+            mContext.startActivity(i);
+
+        }
+    };
+
 
     @Override
     public int getItemCount() {
         return exchangeList.size();
     }
+
 
 }

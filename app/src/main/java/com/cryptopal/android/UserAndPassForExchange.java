@@ -20,7 +20,7 @@ public class UserAndPassForExchange extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_exchange);
+        setContentView(R.layout.activity_user_pass_exchange);
 
         EventBus.getDefault().register( this);
 
