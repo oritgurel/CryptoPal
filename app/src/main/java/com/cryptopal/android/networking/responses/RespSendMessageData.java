@@ -1,30 +1,42 @@
 package com.cryptopal.android.networking.responses;
 
-/**
- * Created by user2 on 15/03/2018.
- */
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+/**
+ * Created by user2 on 16/03/2018.
+ */
 
 public class RespSendMessageData {
 
-    @SerializedName("answer")
+    @SerializedName("message")
     @Expose
-    private String answer;
+    private String message;
+    @SerializedName("reply")
+    @Expose
+    private String reply;
 
-    public String getAnswer() {
-        return answer;
+    public String getMessage() {
+        return message;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getReply() {
+        return reply;
+    }
+
+    public void setReply(String reply) {
+        this.reply = reply;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("answer", answer).toString();
+        return new ToStringBuilder(this).append("message", message).append("reply", reply).toString();
     }
 
 }
