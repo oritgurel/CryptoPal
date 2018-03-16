@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidCryptoPal.iml" filepath="$PROJECT_DIR$/AndroidCryptoPal.iml" />
+      <module fileurl="file://C:\Users\Test\Documents\cryptopal-android\AndroidCryptoPal.iml" filepath="C:\Users\Test\Documents\cryptopal-android\AndroidCryptoPal.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cryptopal-android.iml" filepath="$PROJECT_DIR$/cryptopal-android.iml" />
     </modules>
   </component>
 </project>
