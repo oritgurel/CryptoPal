@@ -1,18 +1,13 @@
 package com.cryptopal.android.activities;
 
-import android.app.Application;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
- import android.widget.Toast;
 
-import com.cryptopal.android.CryptoPalApplication;
 import com.cryptopal.android.R;
+import com.cryptopal.android.adapters.ExchangeAdapter;
 import com.cryptopal.android.arraylists.ArrLstExchanges;
 import com.cryptopal.android.enteteis.Exchange;
 

@@ -1,4 +1,4 @@
-package com.cryptopal.android.activities;
+package com.cryptopal.android.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,8 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cryptopal.android.R;
 import com.cryptopal.android.UserAndPassForExchange;
@@ -32,11 +32,13 @@ public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
+        private LinearLayout mLinearLayoutMain;
         ImageView isConfirmed;
 
 
         public MyViewHolder(View view) {
             super(view);
+            mLinearLayoutMain = view.findViewById(R.id.lolinItemExchangeClick);
             title = (TextView) view.findViewById(R.id.item_title);
             isConfirmed = view.findViewById(R.id.item_img);
 
@@ -60,10 +62,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.MyView
         }else{
             holder.isConfirmed.setVisibility(View.INVISIBLE);
         }
-        holder.title.setOnClickListener(onClickExchange);
-
-
-
+        holder.mLinearLayoutMain.setOnClickListener(onClickExchange);
     }
 
     private View.OnClickListener onClickExchange = new View.OnClickListener() {
