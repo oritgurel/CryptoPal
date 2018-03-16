@@ -21,6 +21,7 @@ import com.cryptopal.android.eventbus.SendMessageEvent;
 import com.cryptopal.android.networking.NetworkAPI;
 import com.cryptopal.android.networking.requests.ReqSendMessage;
 import com.cryptopal.android.networking.responses.RespSendMessage;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -65,7 +66,9 @@ public class ChatActivity extends AppCompatActivity {
                         //call for bot reply from network
                 ReqSendMessage reqSendMessage = new ReqSendMessage();
                 reqSendMessage.setMessage(message);
-                NetworkAPI.getInstance().sendMessage(((CryptoPalApplication) getApplication()).getFirebaseUserAuthenticateId(),
+                String token = ((CryptoPalApplication) getApplication()).getmAccesToken();
+
+                NetworkAPI.getInstance().sendMessage(token,
                         reqSendMessage);
             }
         });

@@ -124,4 +124,8 @@ public class CryptoPalApplication extends Application {
         mAccesToken = aCreateUserEvent.getData().getAccessToken();
     }
 
+    public String getmAccesToken() {
+        return mAccesToken;
+    }
+
 }
