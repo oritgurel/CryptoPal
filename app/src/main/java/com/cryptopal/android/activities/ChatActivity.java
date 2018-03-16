@@ -51,6 +51,7 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
         super.onCreate(savedInstanceState);
         setTheme(R.style.myTheme);
         setContentView(R.layout.activity_chat_list);
+        isMike = true;
         messageList.add(new Message(getString(R.string.welcome_message), true));
 
         getWindow().setTitle("Your Trading Assistant");
@@ -98,6 +99,11 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
     }
 
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -157,6 +163,15 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
                     messageList.add(new Message(result.get(0), false));
                     messageListAdapter.notifyDataSetChanged();
                     recyclerViewChat.scrollToPosition( messageList.size() - 1);
+
+                    ReqSendMessage reqSendMessage = new ReqSendMessage();
+
+                    reqSendMessage.setMessage(result.get(0));
+                    String token = ((CryptoPalApplication) getApplication()).getmAccesToken();
+
+                    NetworkAPI.getInstance().sendMessage(token,
+                            reqSendMessage);
+
                 }
             }break;
         }

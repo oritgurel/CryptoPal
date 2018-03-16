@@ -147,11 +147,16 @@ public class NetworkAPI{
         respSendMessageCall.enqueue(new Callback<RespSendMessage>() {
             @Override
             public void onResponse(Call<RespSendMessage> call, Response<RespSendMessage> response) {
-                Log.d("ResponseBody", response.body().toString());
-                if (response.body().getSuccess()) {
-                    EventBus.getDefault().post(new SendMessageEvent(
-                            response.body().getData().getReply()
-                    ));
+                if (response.body() != null) {
+                    Log.d("ResponseBody", response.body().toString());
+                    if (response.body().getSuccess()) {
+                        EventBus.getDefault().post(new SendMessageEvent(
+                                response.body().getData().getReply()
+                        ));
+                    }
+                    else {
+                        Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else {
                     Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
