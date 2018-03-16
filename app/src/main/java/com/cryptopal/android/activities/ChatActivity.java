@@ -56,7 +56,6 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
 
         getWindow().setTitle("Your Trading Assistant");
 
-        EventBus.getDefault().register(this);
         messageListAdapter = new MessageListAdapter(this, messageList);
         recyclerViewChat = findViewById(R.id.reyclerview_message_list);
 
@@ -98,6 +97,11 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
 
     @Override
     protected void onPause() {
