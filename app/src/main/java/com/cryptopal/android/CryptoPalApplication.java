@@ -37,6 +37,7 @@ public class CryptoPalApplication extends Application {
     public FirebaseAuth.AuthStateListener mAuthListener;
     private String mAccesToken;
 
+
     public FirebaseAuth getFirebaseAuth(){
         return firebaseAuth = FirebaseAuth.getInstance();
     }
@@ -121,12 +122,6 @@ public class CryptoPalApplication extends Application {
     public void onEvent(CreateUserEvent aCreateUserEvent){
         Log.d( TAG, "got authentication for our server : " + aCreateUserEvent.getData().getAccessToken());
         mAccesToken = aCreateUserEvent.getData().getAccessToken();
-    }
-
-    @Subscribe
-    public void onEvent(SendMessageEvent aSendMessageEvent){
-        Log.d( TAG, "bot reply : " + aSendMessageEvent.getReply());
-
     }
 
 }
