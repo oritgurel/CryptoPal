@@ -29,6 +29,7 @@ public class ChooseExchangeActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.myTheme);
         setContentView(R.layout.activity_choose_exchange);
         List<Exchange> exchangeList = new ArrayList<>();
         exchangeList.add(new Exchange("BITTREX",true));

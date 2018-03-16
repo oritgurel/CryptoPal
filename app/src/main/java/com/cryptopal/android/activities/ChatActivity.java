@@ -47,8 +47,9 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
     boolean isMike;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setTheme(R.style.myTheme);
         setContentView(R.layout.activity_chat_list);
         messageList.add(new Message(getString(R.string.welcome_message), true));
 
