@@ -119,4 +119,5 @@ public class CryptoPalApplication extends Application {
         Log.d( TAG, "got authentication for our server : " + aCreateUserEvent.getData().getAccessToken());
         mAccesToken = aCreateUserEvent.getData().getAccessToken();
     }
+
 }

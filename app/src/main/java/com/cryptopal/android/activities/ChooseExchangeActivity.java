@@ -1,5 +1,6 @@
 package com.cryptopal.android.activities;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.cryptopal.android.CryptoPalApplication;
 import com.cryptopal.android.R;
 import com.cryptopal.android.arraylists.ArrLstExchanges;
 
@@ -35,7 +37,7 @@ public class ChooseExchangeActivity extends AppCompatActivity {
 
         final ListView listViewExchange = (ListView) findViewById(R.id.exchange);
 
-        arrLstExchanges = new ArrLstExchanges();
+        arrLstExchanges = ((CryptoPalApplication) getApplication()).getArrLstExchanges();
 
 
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, exchange);
