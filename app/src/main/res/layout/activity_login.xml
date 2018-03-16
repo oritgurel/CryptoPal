@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/_32sdp"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo_splash_screen"/>
 
 
     <TextView

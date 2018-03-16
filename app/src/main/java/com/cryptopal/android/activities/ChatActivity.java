@@ -42,6 +42,10 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_list);
+        messageList.add(new Message(getString(R.string.welcome_message), true));
+
+        getWindow().setTitle("Your Trading Assistant");
+
         EventBus.getDefault().register(this);
         messageListAdapter = new MessageListAdapter(this, messageList);
         recyclerViewChat = findViewById(R.id.reyclerview_message_list);

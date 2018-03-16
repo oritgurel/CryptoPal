@@ -36,5 +36,6 @@
     <string name="select_date">Date</string>
     <string name="save_edit">Save edit</string>
     <string name="title_activity_chat">ChatActivity</string>
+    <string name="welcome_message">Welcome! I am here to help you make the most out of your crypto! Check exchange rate, buy and sell and get live recomandations.</string>
 
 </resources>

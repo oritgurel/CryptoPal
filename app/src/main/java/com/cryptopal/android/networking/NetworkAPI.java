@@ -1,5 +1,6 @@
 package com.cryptopal.android.networking;
 
+import android.util.Log;
 import android.widget.Toast;
 
 import com.cryptopal.android.CryptoPalApplication;
@@ -146,6 +147,7 @@ public class NetworkAPI{
         respSendMessageCall.enqueue(new Callback<RespSendMessage>() {
             @Override
             public void onResponse(Call<RespSendMessage> call, Response<RespSendMessage> response) {
+                Log.d("ResponseBody", response.body().toString());
                 if (response.body().getSuccess()) {
                     EventBus.getDefault().post(new SendMessageEvent(
                             response.body().getData().getReply()
@@ -159,6 +161,7 @@ public class NetworkAPI{
             @Override
             public void onFailure(Call<RespSendMessage> call, Throwable t) {
                 Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Network Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+
             }
         });
     }

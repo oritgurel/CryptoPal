@@ -22,8 +22,8 @@ public class MessageViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         messageText = itemView.findViewById(R.id.text_message_body);
         timeText = itemView.findViewById(R.id.text_message_time);
-        nameText = itemView.findViewById(R.id.text_message_name);
-        profileImage = itemView.findViewById(R.id.image_message_profile);
+//        nameText = itemView.findViewById(R.id.text_message_name);
+//        profileImage = itemView.findViewById(R.id.image_message_profile);
     }
 
     void bind(Message message) {
