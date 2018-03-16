@@ -35,6 +35,8 @@ public class ChooseExchangeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_exchange);
 
+        setTitle("Choose Exchange");
+
         final ListView listViewExchange = (ListView) findViewById(R.id.exchange);
 
         arrLstExchanges = ((CryptoPalApplication) getApplication()).getArrLstExchanges();
