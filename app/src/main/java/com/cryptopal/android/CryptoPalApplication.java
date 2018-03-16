@@ -129,4 +129,7 @@ public class CryptoPalApplication extends Application {
 
     }
 
+    public String getAccesToken() {
+        return mAccesToken;
+    }
 }

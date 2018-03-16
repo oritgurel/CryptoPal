@@ -20,6 +20,12 @@ public class ReqExchangeAdd {
     @Expose
     private String password;
 
+    public ReqExchangeAdd(Integer aExchangeID, String aUsername, String aPassword) {
+        exchangeID = aExchangeID;
+        username = aUsername;
+        password = aPassword;
+    }
+
     public Integer getExchangeID() {
         return exchangeID;
     }

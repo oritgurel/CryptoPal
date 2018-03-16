@@ -1,6 +1,8 @@
 package com.cryptopal.android.adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,12 +11,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.cryptopal.android.CryptoPalApplication;
 import com.cryptopal.android.R;
 import com.cryptopal.android.UserAndPassForExchange;
 import com.cryptopal.android.enteteis.Exchange;
+import com.cryptopal.android.networking.NetworkAPI;
+import com.cryptopal.android.networking.requests.ReqExchangeAdd;
 
 import java.util.List;
+
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 /**
  * Created by Test on 16/03/2018.
@@ -44,6 +52,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.MyView
 
         }
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -59,21 +68,67 @@ public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.MyView
         if (exchange.isConfirmed()) {
 
             holder.isConfirmed.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             holder.isConfirmed.setVisibility(View.INVISIBLE);
         }
+        holder.mLinearLayoutMain.setTag( exchange.getName());
         holder.mLinearLayoutMain.setOnClickListener(onClickExchange);
+
     }
 
     private View.OnClickListener onClickExchange = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             //Toast.makeText( view.getContext(), ((TextView)view).getText(), Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(mContext, UserAndPassForExchange.class);
-            mContext.startActivity(i);
-
+//            openExchangeDetailsActivity(((TextView)view).getText());
+            openExchangeDetailsDialog(view.getTag().toString());
         }
     };
+
+
+    private void openExchangeDetailsDialog(String aExchangeName) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
+
+        //AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+
+        // Setting Dialog Title
+        alertDialog.setTitle( "Credentials for : " + aExchangeName);
+
+        alertDialog.setView( R.layout.dlg_exchange_credentials);
+
+//        // Setting Icon to Dialog
+//        alertDialog.setIcon(R.drawable.key);
+
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to execute after dialog
+//                        Toast.makeText(mContext, "Password Matched", Toast.LENGTH_SHORT).show();
+//                        NetworkAPI.getInstance().addExchange(((CryptoPalApplication)CryptoPalApplication.APP_INSTANCE).getAccesToken(), new ReqExchangeAdd( ));
+
+                    }
+                });
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to execute after dialog
+                        dialog.cancel();
+                    }
+                });
+
+        // closed
+
+        // Showing Alert Message
+        alertDialog.show();
+    }
+
+
+    private void openExchangeDetailsActivity(String aExchangeName) {
+        Intent i = new Intent(mContext, UserAndPassForExchange.class);
+        mContext.startActivity(i);
+    }
 
 
     @Override
