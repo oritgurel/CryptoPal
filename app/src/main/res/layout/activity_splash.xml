@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/chat_bg"
+    android:orientation="vertical"
     tools:context="com.cryptopal.android.activities.SplashActivity">
 
-</RelativeLayout>
+    <ImageView
+        android:layout_width="244dp"
+        android:layout_height="84dp"
+        android:layout_weight="6"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_splash_screen"/>
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="218dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_splash_screen"/>
+
+</LinearLayout>
