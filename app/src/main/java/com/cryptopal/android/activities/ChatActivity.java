@@ -160,17 +160,21 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
             case REQ_CODE_SPEECH_INPUT: {
                 if (resultCode == RESULT_OK && data != null) {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    messageList.add(new Message(result.get(0), false));
+                    String messageText = result.get(0).toString();
+                    messageList.add(new Message(messageText, false));
                     messageListAdapter.notifyDataSetChanged();
                     recyclerViewChat.scrollToPosition( messageList.size() - 1);
 
                     ReqSendMessage reqSendMessage = new ReqSendMessage();
 
-                    reqSendMessage.setMessage(result.get(0));
+                    reqSendMessage.setMessage(messageText);
                     String token = ((CryptoPalApplication) getApplication()).getmAccesToken();
 
-                    NetworkAPI.getInstance().sendMessage(token,
-                            reqSendMessage);
+                    if (reqSendMessage != null) {
+
+                        NetworkAPI.getInstance().sendMessage(token,
+                                reqSendMessage);
+                    }
 
                 }
             }break;
