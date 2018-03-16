@@ -71,7 +71,15 @@
         <EditText
             android:id="@+id/edittext_chatbox"
             android:hint="Enter message"
-            android:background="@android:color/transparent"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+
+
+
+            android:background="@drawable/round_chat_box"
+
             android:layout_gravity="center"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
