@@ -6,13 +6,15 @@ package com.cryptopal.android.eventbus;
 
 public class AddExchangeEvent {
 
-    public final Object data;
-
-    public AddExchangeEvent(Object data) {
-        this.data = data;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public Object getData() {
-        return data;
+    public final boolean success;
+
+    public AddExchangeEvent(boolean success) {
+        this.success = success;
     }
+
+
 }

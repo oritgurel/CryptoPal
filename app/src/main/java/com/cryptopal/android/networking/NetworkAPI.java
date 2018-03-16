@@ -103,8 +103,9 @@ public class NetworkAPI{
             public void onResponse(Call<RespExchangeAdd> call, Response<RespExchangeAdd> response) {
                 if (response.body().getSuccess()) {
                     EventBus.getDefault().post(new AddExchangeEvent(
-                            response.body().getData()
+                        response.body().getSuccess()
                     ));
+                    Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Successfully logged exchange", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
@@ -124,7 +125,9 @@ public class NetworkAPI{
             public void onResponse(Call<RespUpdateFCMToken> call, Response<RespUpdateFCMToken> response) {
                 if (response.body().getSuccess()) {
                     EventBus.getDefault().post(new UpdateFCMTokenEvent(
-                            response.body().getData()));
+                            response.body().getSuccess()));
+                    Toast.makeText(CryptoPalApplication.APP_INSTANCE, "updated FCM token: " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     Toast.makeText(CryptoPalApplication.APP_INSTANCE, "Error : " + response.body().getMessage(), Toast.LENGTH_SHORT).show();
@@ -145,7 +148,7 @@ public class NetworkAPI{
             public void onResponse(Call<RespSendMessage> call, Response<RespSendMessage> response) {
                 if (response.body().getSuccess()) {
                     EventBus.getDefault().post(new SendMessageEvent(
-                            response.body().getData()
+                            response.body().getData().getReply()
                     ));
                 }
                 else {

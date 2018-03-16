@@ -8,13 +8,13 @@ import com.cryptopal.android.networking.responses.RespSendMessageData;
 
 public class SendMessageEvent {
 
-    public final RespSendMessageData data;
+    public final String reply;
 
-    public SendMessageEvent(RespSendMessageData data) {
-        this.data = data;
+    public SendMessageEvent(String reply) {
+        this.reply = reply;
     }
 
-    public RespSendMessageData getData() {
-        return data;
+    public String getReply() {
+        return reply;
     }
 }

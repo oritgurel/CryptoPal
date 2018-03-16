@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import com.cryptopal.android.activities.LoginActivity;
 import com.cryptopal.android.arraylists.ArrLstExchanges;
+import com.cryptopal.android.eventbus.AddExchangeEvent;
 import com.cryptopal.android.eventbus.CreateUserEvent;
+import com.cryptopal.android.eventbus.GetExchangesEvent;
+import com.cryptopal.android.eventbus.SendMessageEvent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -118,6 +121,12 @@ public class CryptoPalApplication extends Application {
     public void onEvent(CreateUserEvent aCreateUserEvent){
         Log.d( TAG, "got authentication for our server : " + aCreateUserEvent.getData().getAccessToken());
         mAccesToken = aCreateUserEvent.getData().getAccessToken();
+    }
+
+    @Subscribe
+    public void onEvent(SendMessageEvent aSendMessageEvent){
+        Log.d( TAG, "bot reply : " + aSendMessageEvent.getReply());
+
     }
 
 }
