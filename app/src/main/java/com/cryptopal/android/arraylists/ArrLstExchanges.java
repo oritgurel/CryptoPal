@@ -15,12 +15,22 @@ import java.util.ArrayList;
 public class ArrLstExchanges extends ArrayList<ModelExchange> {
 
     public ArrLstExchanges() {
-        EventBus.getDefault().register( this);
+        EventBus.getDefault().register(this);
     }
 
     @Subscribe
-    public void onEvent(GetExchangesEvent aGetExchangesEvent){
+    public void onEvent(GetExchangesEvent aGetExchangesEvent) {
         clear();
-        addAll( aGetExchangesEvent.getData());
+        addAll(aGetExchangesEvent.getData());
     }
 }
+
+
+
+
+
+
+
+
+
+

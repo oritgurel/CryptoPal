@@ -9,12 +9,15 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.cryptopal.android.R;
+import com.cryptopal.android.arraylists.ArrLstExchanges;
 
 /**
  * Created by user2 on 15/03/2018.
  */
 
 public class ChooseExchangeActivity extends AppCompatActivity {
+
+    ArrLstExchanges arrLstExchanges;
 
     String[] exchange = new String[]{
             "one",
@@ -32,12 +35,16 @@ public class ChooseExchangeActivity extends AppCompatActivity {
 
         final ListView listViewExchange = (ListView) findViewById(R.id.exchange);
 
+        arrLstExchanges = new ArrLstExchanges();
+
+
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, exchange);
         listViewExchange.setAdapter(adapter);
 
         listViewExchange.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int postion, long Id) {
                 Toast.makeText( ChooseExchangeActivity.this, "selected : " + exchange[postion], Toast.LENGTH_SHORT).show();
+
             }
 
         });
