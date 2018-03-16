@@ -3,6 +3,7 @@ package com.cryptopal.android.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +12,15 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.cryptopal.android.R;
+import com.cryptopal.android.networking.NetworkAPI;
+import com.cryptopal.android.networking.requests.ReqUserCreate;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GetTokenResult;
 
 import java.util.Arrays;
 
@@ -47,6 +53,20 @@ public class SplashActivity extends AppCompatActivity {
                 FirebaseAuth auth = FirebaseAuth.getInstance();
                 if (auth.getCurrentUser() != null) {
                     // already signed in
+
+                    Task<GetTokenResult> getTokenResultTask = auth.getCurrentUser().getIdToken( true);
+                    getTokenResultTask.addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<GetTokenResult> aTask) {
+                            NetworkAPI.getInstance().userCreate( new ReqUserCreate(
+                                    FirebaseAuth.getInstance().getCurrentUser().getUid(),
+                                    FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                                    aTask.getResult().getToken()
+                            ));
+
+                        }
+                    });
+
                     intentNext = new Intent( SplashActivity.this, ChatActivity.class);
                     startActivity(intentNext);
                     SplashActivity.this.finish();

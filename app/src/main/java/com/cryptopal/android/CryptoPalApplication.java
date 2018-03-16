@@ -5,17 +5,22 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.util.EventLog;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.cryptopal.android.activities.LoginActivity;
 import com.cryptopal.android.arraylists.ArrLstExchanges;
+import com.cryptopal.android.eventbus.CreateUserEvent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.cryptopal.android.helper.Helper;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 public class CryptoPalApplication extends Application {
 
@@ -27,6 +32,7 @@ public class CryptoPalApplication extends Application {
     public FirebaseAuth firebaseAuth;
 
     public FirebaseAuth.AuthStateListener mAuthListener;
+    private String mAccesToken;
 
     public FirebaseAuth getFirebaseAuth(){
         return firebaseAuth = FirebaseAuth.getInstance();
@@ -35,6 +41,8 @@ public class CryptoPalApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        EventBus.getDefault().register( this);
 
         APP_INSTANCE = this;
 
@@ -104,5 +112,11 @@ public class CryptoPalApplication extends Application {
 
     public ArrLstExchanges getArrLstExchanges() {
         return mArrLstExchanges;
+    }
+
+    @Subscribe
+    public void onEvent(CreateUserEvent aCreateUserEvent){
+        Log.d( TAG, "got authentication for our server : " + aCreateUserEvent.getData().getAccessToken());
+        mAccesToken = aCreateUserEvent.getData().getAccessToken();
     }
 }

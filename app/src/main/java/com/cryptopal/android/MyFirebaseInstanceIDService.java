@@ -3,6 +3,9 @@ package com.cryptopal.android;
 import android.app.Service;
 import android.util.Log;
 
+import com.cryptopal.android.networking.NetworkAPI;
+import com.cryptopal.android.networking.requests.ReqUserCreate;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
@@ -29,6 +32,12 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
         //now we will have the token
         String token = FirebaseInstanceId.getInstance().getToken();
+
+        NetworkAPI.getInstance().userCreate( new ReqUserCreate(
+                FirebaseAuth.getInstance().getCurrentUser().getUid(),
+                FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                token
+        ));
 
         //for now we are displaying the token in the log
         //copy it as this method is called only when the new token is generated
