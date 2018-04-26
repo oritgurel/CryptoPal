@@ -11,18 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.cryptopal.android.CryptoPalApplication;
 import com.cryptopal.android.R;
 import com.cryptopal.android.UserAndPassForExchange;
-import com.cryptopal.android.enteteis.Exchange;
-import com.cryptopal.android.networking.NetworkAPI;
-import com.cryptopal.android.networking.requests.ReqExchangeAdd;
+import com.cryptopal.android.entiteis.Exchange;
 
 import java.util.List;
-
-import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 /**
  * Created by Test on 16/03/2018.

@@ -1,4 +1,4 @@
-package com.cryptopal.android.enteteis;
+package com.cryptopal.android.entiteis;
 
 /**
  * Created by Test on 16/03/2018.
@@ -6,7 +6,7 @@ package com.cryptopal.android.enteteis;
 
 public class Exchange  {
 
-    String name ;
+    String name;
 
     public String getName() {
         return name;

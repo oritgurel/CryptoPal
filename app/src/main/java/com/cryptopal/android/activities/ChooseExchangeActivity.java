@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.cryptopal.android.R;
 import com.cryptopal.android.adapters.ExchangeAdapter;
 import com.cryptopal.android.arraylists.ArrLstExchanges;
-import com.cryptopal.android.enteteis.Exchange;
+import com.cryptopal.android.entiteis.Exchange;
 
 import java.util.ArrayList;
 import java.util.List;
